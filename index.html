@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>С 8 Марта! 🌸</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #fff0f5, #ffe4e1, #f8f8ff);
+            font-family: 'Cormorant Garamond', serif;
+            text-align: center;
+            padding: 40px;
+            min-height: 100vh;
+            color: #5a4a4a;
+            animation: petalFall 20s linear infinite;
+        }
+
+        @keyframes petalFall {
+            from { background-position: 0 0; }
+            to { background-position: 1000px 1000px; }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(250, 128, 114, 0.1);
+            border: 1px solid rgba(255, 182, 193, 0.3);
+            position: relative;
+        }
+
+        .photo-frame {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border: 3px solid #fff;
+        }
+
+        .photo-frame:hover {
+            transform: rotate(-1deg) scale(1.02);
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: #d87093;
+            text-shadow: 2px 2px 4px rgba(216, 112, 147, 0.1);
+            margin: 25px 0;
+            letter-spacing: 1px;
+        }
+
+        .love-letter {
+            font-style: italic;
+            line-height: 1.8;
+            margin: 30px 0;
+            padding: 20px;
+            background: linear-gradient(45deg, #fff5ee, #fffafa);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .love-letter::after {
+            content: "❀";
+            position: absolute;
+            bottom: -15px;
+            right: 20px;
+            font-size: 24px;
+            color: #ffb6c1;
+        }
+
+        .petal {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #ff69b4;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            animation: float 8s linear infinite;
+        }
+
+        @keyframes float {
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="petals"></div>
+    
+    <div class="container">
+        <div class="photo-frame">
+            <img src="photo_2025-03-08_20-03-48.jpg" alt="Нежность">
+        </div>
+
+        <h1>🌺 С 8 Марта, Вечная Любовь 🌺</h1>
+        
+        <div class="love-letter">
+            <p>
+                "Как первый луч весеннего солнца,<br> 
+                Ты освещаешь каждый мой день.<br>
+                Пусть эта мелодия напомнит,<br>
+                Что любовь наша - вечна, как amen!"
+            </p>
+        </div>
+
+        <div style="margin: 40px 0;">
+            <iframe style="border-radius:12px; border: 1px solid #ffb6c1;" 
+                    src="https://open.spotify.com/embed/track/492PZFHvGTm3RZZYeeUVWT?utm_source=generator" 
+                    width="100%" 
+                    height="352" 
+                    frameborder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        function createPetals() {
+            const container = document.getElementById('petals');
+            for(let i = 0; i < 30; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(petal);
+            }
+        }
+        createPetals();
+    </script>
+</body>
+</html>
